@@ -246,7 +246,7 @@ function getBackgroundMusic() {
   backgroundMusic.addEventListener("ended", () => {
     if (backgroundMusicEnabled) {
       backgroundMusic.currentTime = 0;
-      backgroundMusic.play().catch(() => {});
+      backgroundMusic.play().catch(() => { });
     }
   });
 
@@ -727,6 +727,7 @@ const projects = [
     desc: "Built an Apple website clone using React and Material UI with reusable components, replicating Apple’s minimal design and layout.",
     tags: ["HTML", "CSS", "JavaScript"],
     img: "images/Porfolio.jpeg",
+    github: "https://github.com/MissHimaniIngale/Portfolio-Website.git",
     demo: "demo/Himani-Portfolio.mp4"
   },
   {
@@ -734,14 +735,16 @@ const projects = [
     desc: "Built an Apple website clone using React and Material UI with a reusable, component-based design, replicating Apple’s minimal UI and layout structure.",
     tags: ["HTML", "CSS", "ReactJS"],
     img: "images/Apple clone app (1).png",
-    demo:"demo/apple clone app.mp4"
+    github: "https://github.com/MissHimaniIngale/Apple-Clone.git",
+    demo: "demo/apple clone app.mp4"
   },
   {
     title: "Binge ur ब्या ",
     desc: "Developed the frontend of a role-based wedding booking platform with real-time features using Django and MongoDB.",
-    tags: ["HTML", "CSS", "JS","Django", "Python", "MongoDB"],
+    tags: ["HTML", "CSS", "JS", "Django", "Python", "MongoDB"],
     img: "images/Binge ur Bya.png",
-    demo:"demo/Binge ur ब्या.mp4"
+    github: "https://github.com/MissHimaniIngale/Binge-Ur-Bya.git",
+    demo: "demo/Binge ur ब्या.mp4"
   },
 ];
 
@@ -763,8 +766,8 @@ const cards = projects.map((p, i) => {
       <div class="card-desc">${p.desc}</div>
       <div class="card-tags">${p.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
       <div class="card-btns">
-        ${p.github ? `<a href="${p.github}" target="_blank" class="cbtn cbtn-gh">GitHub</a>` : ""}
-        ${p.demo ? `<a href="${p.demo}" target="_blank" class="cbtn cbtn-live">Live Demo</a>` : ""}
+        ${p.github ? `<a href="${encodeURI(p.github)}" target="_blank" class="cbtn cbtn-gh">GitHub</a>` : ""}
+        ${p.demo ? `<a href="${encodeURI(p.demo)}" target="_blank" class="cbtn cbtn-live">Live Demo</a>` : ""}
       </div>
     </div>`;
   card.addEventListener("mouseenter", () => {
@@ -776,7 +779,7 @@ const cards = projects.map((p, i) => {
     startAuto();
   });
   card.addEventListener("click", (e) => {
-    if (e.target.tagName === "A") return; // ignore button clicks
+    if (e.target.closest("a")) return; // let native link click happen
     if (i !== current) goTo(i);
   });
   track.appendChild(card);
