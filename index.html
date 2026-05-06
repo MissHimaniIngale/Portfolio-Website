@@ -1,0 +1,1249 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Document metadata -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himani</title>
+
+  <!-- Core stylesheet -->
+  <link rel="stylesheet" href="stayle.css" />
+  <!-- Font connections -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <!-- Primary font families -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300..800&family=Playfair+Display:wght@400..900&family=Unbounded:wght@200..900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Accent display fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Icon libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <!-- Animation and image helper libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MorphSVGPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+</head>
+
+<body data-theme="blue">
+  <!-- Animated background layers -->
+  <div id="vanta-bg"></div>
+  <div class="grid-bg"></div>
+  <div class="cursor-glow"></div>
+  <div class="cursor-star" aria-hidden="true">✦</div>
+  <!-- Background audio toggle -->
+  <div class="audio-toggle-cont">
+    <input id="audioToggle" class="audio-toggle-input" type="checkbox" aria-label="Toggle background audio" />
+    <label class="audio-switch" for="audioToggle" title="Toggle background audio">
+      <i class="fa-solid fa-volume-xmark audio-icon audio-icon-mute" aria-hidden="true"></i>
+      <i class="fa-solid fa-volume-high audio-icon audio-icon-high" aria-hidden="true"></i>
+    </label>
+  </div>
+  <!-- Theme toggle -->
+  <div class="toggle-cont">
+    <input class="toggle-input" id="themeToggle" name="themeToggle" type="checkbox" aria-label="Toggle light theme" />
+    <label class="toggle-label" for="themeToggle" title="Toggle theme">
+      <div class="cont-icon">
+        <span style="--width: 2; --deg: 25; --duration: 11" class="sparkle"></span>
+        <span style="--width: 1; --deg: 100; --duration: 18" class="sparkle"></span>
+        <span style="--width: 1; --deg: 280; --duration: 5" class="sparkle"></span>
+        <span style="--width: 2; --deg: 200; --duration: 3" class="sparkle"></span>
+        <span style="--width: 2; --deg: 30; --duration: 20" class="sparkle"></span>
+        <span style="--width: 2; --deg: 300; --duration: 9" class="sparkle"></span>
+        <span style="--width: 1; --deg: 250; --duration: 4" class="sparkle"></span>
+        <span style="--width: 2; --deg: 210; --duration: 8" class="sparkle"></span>
+        <span style="--width: 2; --deg: 100; --duration: 9" class="sparkle"></span>
+        <span style="--width: 1; --deg: 15; --duration: 13" class="sparkle"></span>
+        <span style="--width: 1; --deg: 75; --duration: 18" class="sparkle"></span>
+        <span style="--width: 2; --deg: 65; --duration: 6" class="sparkle"></span>
+        <span style="--width: 2; --deg: 50; --duration: 7" class="sparkle"></span>
+        <span style="--width: 1; --deg: 320; --duration: 5" class="sparkle"></span>
+        <span style="--width: 1; --deg: 220; --duration: 5" class="sparkle"></span>
+        <span style="--width: 1; --deg: 215; --duration: 2" class="sparkle"></span>
+        <span style="--width: 2; --deg: 135; --duration: 9" class="sparkle"></span>
+        <span style="--width: 2; --deg: 45; --duration: 4" class="sparkle"></span>
+        <span style="--width: 1; --deg: 78; --duration: 16" class="sparkle"></span>
+        <span style="--width: 1; --deg: 89; --duration: 19" class="sparkle"></span>
+        <span style="--width: 2; --deg: 65; --duration: 14" class="sparkle"></span>
+        <span style="--width: 2; --deg: 97; --duration: 1" class="sparkle"></span>
+        <span style="--width: 1; --deg: 174; --duration: 10" class="sparkle"></span>
+        <span style="--width: 1; --deg: 236; --duration: 5" class="sparkle"></span>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 30 30" class="icon">
+          <path
+            d="M0.96233 28.61C1.36043 29.0081 1.96007 29.1255 2.47555 28.8971L10.4256 25.3552C13.2236 24.11 16.4254 24.1425 19.2107 25.4401L27.4152 29.2747C27.476 29.3044 27.5418 29.3023 27.6047 29.32C27.6563 29.3348 27.7079 29.3497 27.761 29.3574C27.843 29.3687 27.9194 29.3758 28 29.3688C28.1273 29.3617 28.2531 29.3405 28.3726 29.2945C28.4447 29.262 28.5162 29.2287 28.5749 29.1842C28.6399 29.1446 28.6993 29.0994 28.7509 29.0477L28.9008 28.8582C28.9468 28.7995 28.9793 28.7274 29.0112 28.656C29.0599 28.5322 29.0811 28.4036 29.0882 28.2734C29.0939 28.1957 29.0868 28.1207 29.0769 28.0415C29.0705 27.9955 29.0585 27.9524 29.0472 27.9072C29.0295 27.8343 29.0302 27.7601 28.9984 27.6901L25.1638 19.4855C23.8592 16.7073 23.8273 13.5048 25.0726 10.7068L28.6145 2.75679C28.8429 2.24131 28.7318 1.63531 28.3337 1.2372C27.9165 0.820011 27.271 0.721743 26.7491 0.9961L19.8357 4.59596C16.8418 6.15442 13.2879 6.18696 10.2615 4.70062L1.80308 0.520214C1.7055 0.474959 1.60722 0.441742 1.50964 0.421943C1.44459 0.409215 1.37882 0.395769 1.3074 0.402133C1.14406 0.395769 0.981436 0.428275 0.818095 0.499692C0.77284 0.519491 0.719805 0.545671 0.67455 0.578198C0.596061 0.617088 0.524653 0.675786 0.4596 0.74084C0.394546 0.805894 0.335843 0.877306 0.296245 0.956502C0.263718 1.00176 0.237561 1.05477 0.217762 1.10003C0.152708 1.24286 0.126545 1.40058 0.120181 1.54978C0.120181 1.61483 0.126527 1.6735 0.132891 1.73219C0.15269 1.85664 0.178881 1.97332 0.237571 2.08434L4.41798 10.5427C5.91139 13.5621 5.8725 17.1238 4.3204 20.1099L0.720514 27.0233C0.440499 27.5536 0.545137 28.1928 0.96233 28.61Z">
+          </path>
+        </svg>
+      </div>
+    </label>
+  </div>
+  <!-- Intro loading screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <i class="fa-solid fa-laptop-code fa-5x main-icon hidden"></i>
+
+      <h1 id="loading-text" class="hidden">MY PROFILE</h1>
+
+      <div class="sub-icons">
+        <i class="fa-brands fa-github fa-2x hidden"></i>
+        <i class="fa-solid fa-code fa-2x hidden"></i>
+        <i class="fa-solid fa-user fa-2x hidden"></i>
+      </div>
+
+      <h2 id="designer-text" class="hidden">Designed by Himani</h2>
+    </div>
+  </div>
+  <!-- Main site wrapper -->
+  <div id="main-page">
+    <!-- Header navigation -->
+    <header class="header-list">
+      <div class="div-list">
+        <ul class="ul-list">
+          <li class="active">
+            <i class="fa-solid fa-house"></i>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <i class="fa-regular fa-address-card"></i>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <i class="fa-regular fa-folder-open"></i>
+            <a href="#project">Projects & Services</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-images"></i>
+            <a href="#gallery">Gallery</a>
+          </li>
+          <li>
+            <i class="fa-regular fa-envelope"></i>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- Hero section -->
+    <section class="home" id="home">
+      <p class="home-p"><span class="home-s">. </span>Open to Work</p>
+      <div class="home-container">
+        <div class="home-section">
+          <div class="info-home">
+            <h1>Hi, I'm Himani</h1>
+            <h3 class="gradient-glow">Frontend Developer</h3>
+            <div class="info-p">
+              <p>
+                I design and build user-focused web experiences. Passionate
+                about creating clean and intuitive interfaces.
+              </p>
+              <p>
+                Focused on clarity, responsiveness, and usability. Turning
+                ideas into structured and practical digital solutions.
+              </p>
+            </div>
+            <div class="info-p2">
+              <p><i class="fa-solid fa-location-dot"></i> Based in Kalyan</p>
+              <p><i class="fa-solid fa-briefcase"></i> Available Now</p>
+            </div>
+            <div class="btnn">
+              <button class="btn-home1">
+                <i class="fa-solid fa-arrow-right"></i> Hire Me
+              </button>
+              <a href="doc/ibmresume.pdf" download class="vista-button">
+                <div><i class="fa-solid fa-download"></i> Download CV</div>
+              </a>
+            </div>
+            <div class="hhr">
+              <hr />
+            </div>
+            <div class="follow">
+              <p class="followw">Follow me:</p>
+              <ul>
+                <li>
+                  <a href="https://github.com/MissHimaniIngale"><i class="fa-brands fa-github"></i></a>
+                </li>
+                <li>
+                  <a href=""><i class="fa-brands fa-discord"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/himaniingale"><i class="fa-brands fa-linkedin"></i></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/himani_ingale?igsh=MWJ1YWFoYm1sdDcwdA=="><i
+                      class="fa-brands fa-instagram"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Hanging ID card  -->
+        <!-- The pivot point — the whole card hangs and rotates from here -->
+        <div class="id-pivot" id="idPivot">
+          <!-- glows (behind everything) -->
+          <div class="id-scene-glow"></div>
+          <div class="id-border-glow"></div>
+
+          <!-- the nail the cord hangs from -->
+          <div class="id-nail"></div>
+
+          <!-- everything below the nail -->
+          <div class="id-hanging">
+            <!-- wavy cord -->
+            <svg class="id-cord-svg" viewBox="0 0 70 90" fill="none" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <defs>
+                <linearGradient id="cordGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#c8c8c8" />
+                  <stop offset="45%" stop-color="#7f77dd" />
+                  <stop offset="100%" stop-color="#4a4488" />
+                </linearGradient>
+              </defs>
+              <path d="M35 0 C26 22, 44 44, 35 68 C30 80, 35 88, 35 90" stroke="url(#cordGrad)" stroke-width="3.5"
+                stroke-linecap="round" fill="none" />
+              <path d="M35 0 C20 20, 42 42, 30 64 C25 76, 30 86, 35 90" stroke="rgba(255,255,255,0.14)"
+                stroke-width="1.8" stroke-linecap="round" fill="none" />
+              <path d="M35 0 C50 20, 28 44, 40 66 C46 78, 40 87, 35 90" stroke="rgba(255,255,255,0.11)"
+                stroke-width="1.8" stroke-linecap="round" fill="none" />
+            </svg>
+
+            <!-- metal clip -->
+            <div class="id-clip"></div>
+
+            <!-- THE CARD -->
+            <div class="id-card">
+              <div class="id-card-bar"></div>
+              <div class="id-card-body">
+                <div class="id-avatar">
+                  <img src="images/img.1.jpg" alt="Himani" draggable="false" />
+                </div>
+
+                <div class="id-name">Himani Ingale</div>
+                <div class="id-role">Frontend Developer</div>
+
+                <div class="id-divider"></div>
+
+                <div class="id-info-row">
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>Mumbai, India</span>
+                </div>
+                <div class="id-info-row">
+                  <i class="fa-solid fa-graduation-cap"></i>
+                  <span>DMCE · Computer Engg</span>
+                </div>
+                <div class="id-info-row">
+                  <i class="fa-solid fa-circle" style="color: #1d9e75; font-size: 8px"></i>
+                  <span>Available for hire</span>
+                </div>
+
+                <div class="id-divider"></div>
+
+                <div class="id-barcode" aria-hidden="true" id="idBarcode"></div>
+              </div>
+            </div>
+          </div>
+          <!-- /id-hanging -->
+        </div>
+        <!-- /id-pivot -->
+      </div>
+    </section>
+    <!-- About section -->
+    <section class="about" id="about">
+      <p>ABOUT ME</p>
+      <div class="title">
+        <h1>Building Meaningful</h1>
+        <h1>Digital Experiences</h1>
+      </div>
+      <div class="hrrr">
+        <hr />
+      </div>
+
+      <div class="about-container">
+        <!-- LEFT SIDE: all text -->
+        <div class="info-about">
+          <div class="about-info">
+            <p>
+              I'm a creative front-end developer passionate about building
+              modern and responsive web experiences. My journey began with a
+              love for design and evolved into a deep curiosity for how the
+              web works — combining logic with creativity to bring ideas to
+              life.
+            </p>
+            <p>
+              When I'm not coding, I enjoy learning new technologies,
+              improving my projects, and exploring better ways to make the web
+              faster and more engaging. I believe in continuous learning,
+              attention to detail, and the power of clean, meaningful design.
+            </p>
+          </div>
+          <h2>What Builds Me</h2>
+          <!-- EDUCATION TIMELINE -->
+          <style>
+            .tl-wrap {
+              padding: 10px 0 20px 0;
+              position: relative;
+            }
+
+            .tl-line {
+              position: absolute;
+              left: 50%;
+              top: 0;
+              bottom: 0;
+              width: 2px;
+              background: linear-gradient(180deg, #7f77dd, #1d9e75, #ef9f27);
+              transform: translateX(-50%);
+              border-radius: 2px;
+            }
+
+            .tl-items {
+              position: relative;
+              display: flex;
+              flex-direction: column;
+              gap: 40px;
+              padding: 10px 0;
+            }
+
+            .tl-item {
+              display: flex;
+              align-items: center;
+              position: relative;
+            }
+
+            .tl-item:nth-child(odd) {
+              flex-direction: row;
+            }
+
+            .tl-item:nth-child(even) {
+              flex-direction: row-reverse;
+            }
+
+            .tl-item:nth-child(odd) .tl-card {
+              margin-right: auto;
+            }
+
+            .tl-item:nth-child(even) .tl-card {
+              margin-left: auto;
+            }
+
+            .tl-card {
+              width: 44%;
+              position: relative;
+              border-radius: 12px;
+              padding: 14px 16px;
+              background: #f8f8f8;
+              border: 1px solid #e0e0e0;
+              transition:
+                border-color 0.3s,
+                background 0.3s;
+              overflow: hidden;
+              cursor: default;
+            }
+
+            .tl-card::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              top: -100%;
+              width: 100%;
+              height: 100%;
+              background: linear-gradient(180deg,
+                  transparent 0%,
+                  rgba(127, 119, 221, 0.08) 50%,
+                  transparent 100%);
+              pointer-events: none;
+              z-index: 0;
+            }
+
+            .tl-card:hover::before {
+              top: 100%;
+              transition: top 0.6s ease;
+            }
+
+            .tl-card:hover {
+              background: #fff;
+              border-color: #bbb;
+            }
+
+            .bracket {
+              position: absolute;
+              width: 10px;
+              height: 10px;
+              transition:
+                width 0.3s,
+                height 0.3s,
+                opacity 0.3s;
+              opacity: 0;
+              pointer-events: none;
+            }
+
+            .bracket.tl {
+              top: 4px;
+              left: 4px;
+              border-top: 1.5px solid;
+              border-left: 1.5px solid;
+              border-radius: 2px 0 0 0;
+            }
+
+            .bracket.tr {
+              top: 4px;
+              right: 4px;
+              border-top: 1.5px solid;
+              border-right: 1.5px solid;
+              border-radius: 0 2px 0 0;
+            }
+
+            .bracket.bl {
+              bottom: 4px;
+              left: 4px;
+              border-bottom: 1.5px solid;
+              border-left: 1.5px solid;
+              border-radius: 0 0 0 2px;
+            }
+
+            .bracket.br {
+              bottom: 4px;
+              right: 4px;
+              border-bottom: 1.5px solid;
+              border-right: 1.5px solid;
+              border-radius: 0 0 2px 0;
+            }
+
+            .tl-card:hover .bracket {
+              opacity: 1;
+              width: 16px;
+              height: 16px;
+            }
+
+            .glitch-bar {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 2px;
+              width: 0%;
+              transition: width 0.4s ease;
+              border-radius: 0 0 0 12px;
+              z-index: 1;
+            }
+
+            .tl-card:hover .glitch-bar {
+              width: 100%;
+            }
+
+            .data-dots {
+              position: absolute;
+              top: 6px;
+              right: 8px;
+              display: flex;
+              gap: 3px;
+              opacity: 0;
+              transition: opacity 0.3s;
+            }
+
+            .tl-card:hover .data-dots {
+              opacity: 1;
+            }
+
+            .data-dots span {
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              animation: blink 1s ease-in-out infinite;
+            }
+
+            .data-dots span:nth-child(2) {
+              animation-delay: 0.2s;
+            }
+
+            .data-dots span:nth-child(3) {
+              animation-delay: 0.4s;
+            }
+
+            @keyframes blink {
+
+              0%,
+              100% {
+                opacity: 0.2;
+              }
+
+              50% {
+                opacity: 1;
+              }
+            }
+
+            .card-content {
+              position: relative;
+              z-index: 1;
+            }
+
+            .yr {
+              font-size: 9px;
+              font-weight: 500;
+              letter-spacing: 2px;
+              text-transform: uppercase;
+              margin-bottom: 5px;
+            }
+
+            .tl-school {
+              font-size: 13px;
+              font-weight: 500;
+              color: #111;
+              margin-bottom: 2px;
+              line-height: 1.3;
+            }
+
+            .tl-level {
+              font-size: 11px;
+              color: #888;
+              margin-bottom: 8px;
+            }
+
+            .grade-pill {
+              display: inline-block;
+              font-size: 11px;
+              font-weight: 500;
+              padding: 2px 8px;
+              border-radius: 20px;
+              border: 1px solid;
+            }
+
+            .dot-wrap {
+              position: absolute;
+              left: 50%;
+              transform: translateX(-50%);
+              z-index: 10;
+            }
+
+            .dot {
+              width: 14px;
+              height: 14px;
+              border-radius: 50%;
+              position: relative;
+            }
+
+            .dot::before {
+              content: "";
+              position: absolute;
+              inset: -4px;
+              border-radius: 50%;
+              animation: ripple 2s ease-in-out infinite;
+              opacity: 0.4;
+            }
+
+            .dot::after {
+              content: "";
+              position: absolute;
+              inset: -8px;
+              border-radius: 50%;
+              animation: ripple 2s ease-in-out infinite 0.5s;
+              opacity: 0.2;
+            }
+
+            @keyframes ripple {
+              0% {
+                transform: scale(0.8);
+                opacity: 0.5;
+              }
+
+              100% {
+                transform: scale(1.6);
+                opacity: 0;
+              }
+            }
+
+            .d1 {
+              background: #7f77dd;
+              box-shadow: 0 0 8px #7f77dd88;
+            }
+
+            .d1::before,
+            .d1::after {
+              background: #7f77dd;
+            }
+
+            .d2 {
+              background: #1d9e75;
+              box-shadow: 0 0 8px #1d9e7588;
+            }
+
+            .d2::before,
+            .d2::after {
+              background: #1d9e75;
+            }
+
+            .d3 {
+              background: #ef9f27;
+              box-shadow:
+                0 0 12px #ef9f2799,
+                0 0 24px #ef9f2744;
+            }
+
+            .d3::before,
+            .d3::after {
+              background: #ef9f27;
+              animation-duration: 1.2s;
+            }
+
+            @media (max-width: 768px) {
+              .tl-line {
+                left: 20px;
+                transform: none;
+              }
+
+              .tl-item,
+              .tl-item:nth-child(odd),
+              .tl-item:nth-child(even) {
+                flex-direction: row;
+                margin-bottom: 20px;
+              }
+
+              .tl-card {
+                width: calc(100% - 50px) !important;
+                margin-left: 50px !important;
+                margin-right: 0 !important;
+              }
+
+              .dot-wrap {
+                left: 20px;
+                transform: translateX(-50%);
+              }
+            }
+          </style>
+
+          <div class="tl-wrap">
+            <div style="position: relative">
+              <div class="tl-line"></div>
+              <div class="tl-items">
+                <div class="tl-item">
+                  <div class="tl-card">
+                    <div class="bracket tl" style="border-color: #7f77dd"></div>
+                    <div class="bracket tr" style="border-color: #7f77dd"></div>
+                    <div class="bracket bl" style="border-color: #7f77dd"></div>
+                    <div class="bracket br" style="border-color: #7f77dd"></div>
+                    <div class="glitch-bar" style="
+                          background: linear-gradient(90deg, #7f77dd, #afa9ec);
+                        "></div>
+                    <div class="data-dots">
+                      <span style="background: #7f77dd"></span>
+                      <span style="background: #7f77dd"></span>
+                      <span style="background: #7f77dd"></span>
+                    </div>
+                    <div class="card-content">
+                      <div class="yr" style="color: #7f77dd">March 2018</div>
+                      <div class="tl-school">Lourdes High School</div>
+                      <div class="tl-level">
+                        Secondary education · 10th std
+                      </div>
+                      <span class="grade-pill" style="
+                            color: #7f77dd;
+                            border-color: #7f77dd44;
+                            background: rgba(127, 119, 221, 0.08);
+                          ">79.20%</span>
+                    </div>
+                  </div>
+                  <div class="dot-wrap">
+                    <div class="dot d1"></div>
+                  </div>
+                </div>
+
+                <div class="tl-item">
+                  <div class="tl-card">
+                    <div class="bracket tl" style="border-color: #1d9e75"></div>
+                    <div class="bracket tr" style="border-color: #1d9e75"></div>
+                    <div class="bracket bl" style="border-color: #1d9e75"></div>
+                    <div class="bracket br" style="border-color: #1d9e75"></div>
+                    <div class="glitch-bar" style="
+                          background: linear-gradient(90deg, #1d9e75, #5dcaa5);
+                        "></div>
+                    <div class="data-dots">
+                      <span style="background: #1d9e75"></span>
+                      <span style="background: #1d9e75"></span>
+                      <span style="background: #1d9e75"></span>
+                    </div>
+                    <div class="card-content">
+                      <div class="yr" style="color: #1d9e75">
+                        February 2020
+                      </div>
+                      <div class="tl-school">
+                        Shivaji Higher Education College
+                      </div>
+                      <div class="tl-level">Higher secondary · 12th std</div>
+                      <span class="grade-pill" style="
+                            color: #1d9e75;
+                            border-color: #1d9e7544;
+                            background: rgba(29, 158, 117, 0.08);
+                          ">82.93%</span>
+                    </div>
+                  </div>
+                  <div class="dot-wrap">
+                    <div class="dot d2"></div>
+                  </div>
+                </div>
+
+                <div class="tl-item">
+                  <div class="tl-card">
+                    <div class="bracket tl" style="border-color: #ef9f27"></div>
+                    <div class="bracket tr" style="border-color: #ef9f27"></div>
+                    <div class="bracket bl" style="border-color: #ef9f27"></div>
+                    <div class="bracket br" style="border-color: #ef9f27"></div>
+                    <div class="glitch-bar" style="
+                          background: linear-gradient(90deg, #ef9f27, #fac775);
+                        "></div>
+                    <div class="data-dots">
+                      <span style="background: #ef9f27"></span>
+                      <span style="background: #ef9f27"></span>
+                      <span style="background: #ef9f27"></span>
+                    </div>
+                    <div class="card-content">
+                      <div class="yr" style="color: #ef9f27">
+                        Present · Ongoing
+                      </div>
+                      <div class="tl-school">
+                        Datta Meghe College of Engineering
+                      </div>
+                      <div class="tl-level">BE · Computer engineering</div>
+                      <span class="grade-pill" style="
+                            color: #ef9f27;
+                            border-color: #ef9f2744;
+                            background: rgba(239, 159, 39, 0.08);
+                          ">7.50 CGPA avg</span>
+                    </div>
+                  </div>
+                  <div class="dot-wrap">
+                    <div class="dot d3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- info-about ends here -->
+        <!-- RIGHT SIDE: photo card -->
+        <div class="container noselect">
+          <div class="canvas">
+            <div class="tracker tr-1"></div>
+            <div class="tracker tr-2"></div>
+            <div class="tracker tr-3"></div>
+            <div class="tracker tr-4"></div>
+            <div class="tracker tr-5"></div>
+            <div class="tracker tr-6"></div>
+            <div class="tracker tr-7"></div>
+            <div class="tracker tr-8"></div>
+            <div class="tracker tr-9"></div>
+            <div class="tracker tr-10"></div>
+            <div class="tracker tr-11"></div>
+            <div class="tracker tr-12"></div>
+            <div class="tracker tr-13"></div>
+            <div class="tracker tr-14"></div>
+            <div class="tracker tr-15"></div>
+            <div class="tracker tr-16"></div>
+            <div class="tracker tr-17"></div>
+            <div class="tracker tr-18"></div>
+            <div class="tracker tr-19"></div>
+            <div class="tracker tr-20"></div>
+            <div class="tracker tr-21"></div>
+            <div class="tracker tr-22"></div>
+            <div class="tracker tr-23"></div>
+            <div class="tracker tr-24"></div>
+            <div class="tracker tr-25"></div>
+            <div id="card">
+              <img src="images/img.2.jpeg" alt="Profile" />
+            </div>
+          </div>
+        </div>
+        <!-- ↑ container closes HERE -->
+      </div>
+      <!-- ↑ about-container closes HERE -->
+
+      <div class="tech-globe-wrap">
+        <div class="tech-globe-header">
+          <p class="tech-globe-label">What I work with</p>
+          <h2 class="tech-globe-title">My Tech Stack</h2>
+          <div class="tech-globe-hr"></div>
+        </div>
+        <div class="globe-box">
+          <canvas id="techCanvas"></canvas>
+        </div>
+
+        <!-- skill pills displayed below globe -->
+        <div class="tech-skill-pills">
+          <span class="skill-pill" style="--c: #e34c26">HTML</span>
+          <span class="skill-pill" style="--c: #fc01d2">CSS</span>
+          <span class="skill-pill" style="--c: #f7df1e">JavaScript</span>
+          <span class="skill-pill" style="--c: #f10014">ReactJs</span>
+          <span class="skill-pill" style="--c: #2fff05">MySQL</span>
+          <span class="skill-pill" style="--c: #f89820">Java</span>
+        </div>
+
+        <div class="tools-marquee-section">
+          <div class="tools-title-container">
+            <h2>Tools I work with</h2>
+          </div>
+          <div class="marquee-track" id="toolsMarqueeTrack">
+            <!-- Populated by main.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Projects and services section -->
+    <section class="project" id="project">
+      <p class="section-eyebrow">PROJECTS & SERVICES</p>
+      <h1>Featured Work</h1>
+      <hr class="proj-hr" />
+      <div class="info-pro">
+        <p>
+          A showcase of my recent projects demonstrating expertise in
+          full-stack<br />development, modern frameworks, and creative
+          problem-solving.
+        </p>
+      </div>
+
+      <div class="carousel-wrapper" id="carouselWrapper">
+        <div class="carousel-track" id="carouselTrack"></div>
+      </div>
+
+      <div class="nav-dots" id="navDots"></div>
+      <div class="nav-arrows">
+        <button class="nav-btn" id="prevBtn">&#8592;</button>
+        <button class="nav-btn" id="nextBtn">&#8594;</button>
+      </div>
+
+      <div class="project-services" style="
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+          ">
+        <h1>Our Features & Services</h1>
+        <hr class="proj-hr" style="margin-bottom: 40px" />
+
+        <div class="services-container" style="width: 100%">
+          <div class="service-card">
+            <img src="images/web.svg" alt="Web Design" />
+            <h3>Web Design</h3>
+            <p>
+              Designing clean, modern, and user-friendly website interfaces
+              that focus on visual appeal, usability, and a smooth experience
+              across desktop and mobile devices.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <img src="images/app.svg" alt="Web Development" />
+            <h3>Web Development</h3>
+            <p>
+              Building responsive and high-performing websites using modern
+              technologies with attention to functionality, speed,
+              accessibility, and maintainable front-end structure.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <img src="images/dm.svg" alt="Social Media Marketing" />
+            <h3>Social Media Marketing</h3>
+            <p>
+              Promoting brands and services through strategic social media
+              content, campaign planning, audience engagement, and
+              platform-focused marketing that increases reach and visibility.
+            </p>
+          </div>
+
+          <div class="service-card">
+            <img src="images/seo.svg" alt="Full Stack Development" />
+            <h3>Full Stack Development</h3>
+            <p>
+              Creating complete web solutions by handling both front-end
+              interfaces and back-end logic, including databases, APIs,
+              authentication, and end-to-end application workflows.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery section -->
+    <section class="project gallery" id="gallery">
+      <p class="section-eyebrow">GALLERY</p>
+      <h1>Circular Showcase</h1>
+      <hr class="proj-hr" />
+      <div class="info-pro">
+        <p>
+          A visual collection of my Milestones, Leadership and Involvement in
+          my Circular.
+        </p>
+      </div>
+
+      <div class="slider">
+        <button class="slider--btn slider--btn__prev" aria-label="Previous gallery slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6" />
+          </svg>
+        </button>
+
+        <div class="slides__wrapper">
+          <div class="slides">
+            <!-- Add more photos by appending one .slide and one matching .slide__bg here, in the same order. -->
+            <div class="slide" data-current>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img class="slide--image" src="images/slide.1.JPG" alt="Cultural Head moment" />
+                </div>
+              </div>
+            </div>
+            <div class="slide__bg" style="--bg: url(images/slide.1.JPG)" data-current></div>
+
+            <div class="slide" data-next>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img class="slide--image" src="images/slide.2.jpg" alt="Drama club head moment" />
+                </div>
+              </div>
+            </div>
+            <div class="slide__bg" style="--bg: url(images/slide.2.jpg)" data-next></div>
+
+            <div class="slide" data-previous>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img class="slide--image" src="images/slide.3.jpeg" alt="Graphic design head moment" />
+                </div>
+              </div>
+            </div>
+            <div class="slide__bg" style="--bg: url(images/slide.3.jpeg)" data-previous></div>
+
+            <div class="slide" data-far>
+              <div class="slide__inner">
+                <div class="slide--image__wrapper">
+                  <img class="slide--image" src="images/slide.4.jpeg" alt="Design and publicity coordinator moment" />
+                </div>
+              </div>
+            </div>
+            <div class="slide__bg" style="--bg: url(images/slide.4.jpeg)" data-far></div>
+          </div>
+
+          <div class="slides--infos">
+            <!-- Add one matching .slide-info here for every photo above, in the same order. -->
+            <div class="slide-info" data-current>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Cultural Head</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span>Marathi Vandmay Mandal (Cultural Committee)</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>DMCE 2024-25</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-info" data-next>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Natyavihar Head</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span> "Natyavihar"(Drama Club)-Marathi Vandmay Mandal</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>DMCE 2025-26 (also founded it in 2024-25)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-info" data-previous>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Graphic Design Head</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span>Computer Society of India (CSI)</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>DMCE 2025-26</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="slide-info" data-far>
+              <div class="slide-info__inner">
+                <div class="slide-info--text__wrapper">
+                  <div data-title class="slide-info--text">
+                    <span>Design and Publicity Coordinator</span>
+                  </div>
+                  <div data-subtitle class="slide-info--text">
+                    <span>Adhyayan Gen-Z (College Magazine)</span>
+                  </div>
+                  <div data-description class="slide-info--text">
+                    <span>DMCE 2023-24</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="loader">
+            <span class="loader__text">0%</span>
+          </div>
+        </div>
+
+        <button class="slider--btn slider--btn__next" aria-label="Next gallery slide">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m9 18 6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+    </section>
+
+    <!-- Contact section -->
+    <section class="contact" id="contact">
+      <div class="contact-header">
+        <p class="label">Contact</p>
+        <h1>Get in Touch With Us</h1>
+      </div>
+
+      <div class="contact-content">
+        <!-- ── LEFT: Lamp + Social ── -->
+        <div class="contact-info">
+          <!-- Hidden radio state controls -->
+          <form class="radio-controls" style="display: none">
+            <input type="radio" id="on" name="status" value="on" />
+            <input type="radio" id="off" name="status" value="off" />
+          </form>
+
+          <!-- LAMP SVG -->
+          <svg class="lamp" viewBox="0 0 333 484" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g class="lamp__shade shade">
+              <ellipse class="shade__opening" cx="165" cy="220" rx="130" ry="20" />
+              <ellipse class="shade__opening-shade" cx="165" cy="220" rx="130" ry="20" fill="url(#opening-shade)" />
+            </g>
+            <g class="lamp__base base">
+              <path class="base__side"
+                d="M165 464c44.183 0 80-8.954 80-20v-14h-22.869c-14.519-3.703-34.752-6-57.131-6-22.379 0-42.612 2.297-57.131 6H85v14c0 11.046 35.817 20 80 20z" />
+              <path
+                d="M165 464c44.183 0 80-8.954 80-20v-14h-22.869c-14.519-3.703-34.752-6-57.131-6-22.379 0-42.612 2.297-57.131 6H85v14c0 11.046 35.817 20 80 20z"
+                fill="url(#side-shading)" />
+              <ellipse class="base__top" cx="165" cy="430" rx="80" ry="20" />
+              <ellipse cx="165" cy="430" rx="80" ry="20" fill="url(#base-shading)" />
+            </g>
+            <g class="lamp__post post">
+              <path class="post__body" d="M180 142h-30v286c0 3.866 6.716 7 15 7 8.284 0 15-3.134 15-7V142z" />
+              <path d="M180 142h-30v286c0 3.866 6.716 7 15 7 8.284 0 15-3.134 15-7V142z" fill="url(#post-shading)" />
+            </g>
+            <g class="lamp__cords cords">
+              <path class="cord cord--rig" d="M124 187.033V347" stroke-width="6" stroke-linecap="round" />
+              <path class="cord cord--rig"
+                d="M124 187.023s17.007 21.921 17.007 34.846c0 12.925-11.338 23.231-17.007 34.846-5.669 11.615-17.007 21.921-17.007 34.846 0 12.925 17.007 34.846 17.007 34.846"
+                stroke-width="6" stroke-linecap="round" />
+              <path class="cord cord--rig"
+                d="M124 187.017s-21.259 17.932-21.259 30.26c0 12.327 14.173 20.173 21.259 30.26 7.086 10.086 21.259 17.933 21.259 30.26 0 12.327-21.259 30.26-21.259 30.26"
+                stroke-width="6" stroke-linecap="round" />
+              <path class="cord cord--rig"
+                d="M124 187s29.763 8.644 29.763 20.735-19.842 13.823-29.763 20.734c-9.921 6.912-29.763 8.644-29.763 20.735S124 269.939 124 269.939"
+                stroke-width="6" stroke-linecap="round" />
+              <path class="cord cord--rig"
+                d="M124 187.029s-10.63 26.199-10.63 39.992c0 13.794 7.087 26.661 10.63 39.992 3.543 13.331 10.63 26.198 10.63 39.992 0 13.793-10.63 39.992-10.63 39.992"
+                stroke-width="6" stroke-linecap="round" />
+              <path class="cord cord--rig" d="M124 187.033V347" stroke-width="6" stroke-linecap="round" />
+              <line class="cord cord--dummy" x1="124" y2="348" x2="124" y1="190" stroke-width="6"
+                stroke-linecap="round" />
+            </g>
+            <path class="lamp__light" d="M290.5 193H39L0 463.5c0 11.046 75.478 20 165.5 20s167-11.954 167-23l-42-267.5z"
+              fill="url(#light)" />
+            <g class="lamp__top top">
+              <path class="top__body" fill-rule="evenodd" clip-rule="evenodd"
+                d="M164.859 0c55.229 0 100 8.954 100 20l29.859 199.06C291.529 208.451 234.609 200 164.859 200S38.189 208.451 35 219.06L64.859 20c0-11.046 44.772-20 100-20z" />
+              <path class="top__shading" fill-rule="evenodd" clip-rule="evenodd"
+                d="M164.859 0c55.229 0 100 8.954 100 20l29.859 199.06C291.529 208.451 234.609 200 164.859 200S38.189 208.451 35 219.06L64.859 20c0-11.046 44.772-20 100-20z"
+                fill="url(#top-shading)" />
+            </g>
+            <g class="lamp__face face">
+              <g class="lamp__mouth">
+                <path d="M165 178c19.882 0 36-16.118 36-36h-72c0 19.882 16.118 36 36 36z" fill="#141414" />
+                <clipPath class="lamp__feature" id="mouth" x="129" y="142" width="72" height="36">
+                  <path d="M165 178c19.882 0 36-16.118 36-36h-72c0 19.882 16.118 36 36 36z" fill="#141414" />
+                </clipPath>
+                <g clip-path="url(#mouth)">
+                  <circle class="lamp__tongue" cx="179.4" cy="172.6" r="18" />
+                </g>
+              </g>
+              <g class="lamp__eyes">
+                <path class="lamp__eye lamp__stroke" d="M115 135c0-5.523-5.82-10-13-10s-13 4.477-13 10" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path class="lamp__eye lamp__stroke" d="M241 135c0-5.523-5.82-10-13-10s-13 4.477-13 10" stroke-width="4"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+            </g>
+            <defs>
+              <linearGradient id="opening-shade" x1="35" y1="220" x2="295" y2="220" gradientUnits="userSpaceOnUse">
+                <stop />
+                <stop offset="1" stop-color="var(--shade)" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="base-shading" x1="85" y1="444" x2="245" y2="444" gradientUnits="userSpaceOnUse">
+                <stop stop-color="var(--b-1)" />
+                <stop offset="0.8" stop-color="var(--b-2)" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="side-shading" x1="119" y1="430" x2="245" y2="430" gradientUnits="userSpaceOnUse">
+                <stop stop-color="var(--b-3)" />
+                <stop offset="1" stop-color="var(--b-4)" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="post-shading" x1="150" y1="288" x2="180" y2="288" gradientUnits="userSpaceOnUse">
+                <stop stop-color="var(--b-1)" />
+                <stop offset="1" stop-color="var(--b-2)" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="light" x1="165.5" y1="218.5" x2="165.5" y2="483.5" gradientUnits="userSpaceOnUse">
+                <stop stop-color="var(--l-1)" stop-opacity=".2" />
+                <stop offset="1" stop-color="var(--l-2)" stop-opacity="0" />
+              </linearGradient>
+              <linearGradient id="top-shading" x1="56" y1="110" x2="295" y2="110" gradientUnits="userSpaceOnUse">
+                <stop stop-color="var(--t-1)" stop-opacity=".8" />
+                <stop offset="1" stop-color="var(--t-2)" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <circle class="lamp__hit" cx="124" cy="347" r="66" fill="#C4C4C4" fill-opacity=".1" />
+          </svg>
+
+          <p class="lamp-hint">↑ pull the cord</p>
+
+          <!-- SOCIAL ICONS (hidden until lamp is ON) -->
+          <div class="social-links">
+            <a href="https://github.com/MissHimaniIngale" class="social-link" target="_blank" title="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/himaniingale" class="social-link" target="_blank" title="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/share/1DsZvna1Jz/" class="social-link" target="_blank" title="WhatsApp">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
+        </div>
+        <!-- /contact-info -->
+
+        <!-- ── RIGHT: Contact Form (hidden until lamp is ON) ── -->
+        <form class="contact-form" id="contactForm" novalidate>
+          <h2>Light Up the Conversation</h2>
+
+          <div class="form-group">
+            <label for="contactName">Your Name</label>
+            <input type="text" id="contactName" name="name" placeholder="e.g. himani ingale" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactEmail">Your Email</label>
+            <input type="email" id="contactEmail" name="email" placeholder="e.g. hello@example.com" autocomplete="email"
+              inputmode="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="contactMessage">Your Message</label>
+            <textarea id="contactMessage" name="message" rows="4" placeholder="Write your message here…"
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn-send" id="btnSend">
+            <span>Send Message</span>
+          </button>
+          <p class="contact-note" id="contactStatus" aria-live="polite"></p>
+        </form>
+      </div>
+      <!-- /contact-content -->
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer">
+      <div class="footer-container">
+        <h2 class="footer-logo">Himani</h2>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://github.com/MissHimaniIngale" target="_blank" aria-label="GitHub"><i
+              class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/himaniingale" target="_blank" aria-label="LinkedIn"><i
+              class="fa-brands fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/share/1DsZvna1Jz/" target="_blank" aria-label="WhatsApp"><i
+              class="fa-brands fa-facebook"></i></a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Himani. All Rights Reserved.</p>
+        <p class="footer-copy"
+          style="margin-top: 4px; font-size: 10.5px; display: inline-flex; align-items: center; justify-content: center; gap: 6px;">
+          <i class="fa-solid fa-envelope"></i> ingale.himani.co132@gmail.com
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- External libraries and main script -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="module" src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+
+  <!-- Vanta background theme setup -->
+  <script>
+    const vantaThemes = {
+      blue: {
+        color: 0xff5db1,
+        backgroundColor: 0x020617,
+        points: 7,
+        maxDistance: 18,
+        spacing: 18,
+      },
+      dark: {
+        color: 0x8e959d,
+        backgroundColor: 0x000000,
+        points: 8,
+        maxDistance: 21,
+        spacing: 17,
+      },
+    };
+
+    let vantaEffect = null;
+
+    function createVanta(themeName) {
+      const theme = vantaThemes[themeName] || vantaThemes.blue;
+      if (vantaEffect && typeof vantaEffect.destroy === "function") {
+        vantaEffect.destroy();
+      }
+
+      vantaEffect = VANTA.NET({
+        el: "#vanta-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        ...theme,
+      });
+    }
+
+    window.updateVantaTheme = function (themeName) {
+      createVanta(themeName);
+    };
+
+    window.addEventListener("DOMContentLoaded", function () {
+      const initialTheme = document.body?.dataset?.theme || "blue";
+      createVanta(initialTheme);
+    });
+  </script>
+  <!-- duplicate gsap scripts removed -->
+</body>
+
+</html>
