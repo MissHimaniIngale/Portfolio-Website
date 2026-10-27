@@ -1,21 +1,40 @@
-MIT License
+ CUSTOM SOFTWARE LICENSE
 
-Copyright (c) 2026 Miss Himani Ingale
+Copyright (c) 2026 Himani Ingale
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. PERMISSION
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Permission is granted to any person to use, copy, modify, and
+distribute this software, including for commercial purposes,
+subject to the conditions below.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+2. ATTRIBUTION REQUIREMENT
+
+Any public distribution, publication, or deployment of this
+software, including modified versions, must visibly credit
+Himani Ingale as the original creator.
+
+The attribution must include a clickable link to at least one
+of the following:
+
+GitHub: https://github.com/MissHimaniIngale
+Portfolio: [INSERT YOUR PORTFOLIO WEBSITE URL]
+
+The credit must be reasonably visible in the project's
+documentation, credits section, or website footer.
+
+3. PRESERVATION OF NOTICE
+
+Copies and substantial portions of the software must retain
+this copyright notice and this licence.
+
+4. NO WARRANTY
+
+The software is provided "AS IS", without warranty of any kind,
+express or implied. The author is not liable for claims or
+damages arising from its use, to the extent permitted by law.
+
+5. CONDITIONS
+
+Use of this software constitutes acceptance of these terms.
+Permissions are subject to compliance with this licence.
